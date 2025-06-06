@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"type="text/css" href="style.css">
+    <title>CalculatorApp</title>
+</head>
+<body>
+    <div class="calculator">
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text"id="inputBox" value="0"/>
+
+        </td>
+    </tr>
+    <tr>
+        <td class="digitButon" onclick="digitBtnPressed(7)">7</td>
+        <td class="digitButon" onclick="digitBtnPressed(8)">8</td>
+        <td class="digitButon"  onclick="digitBtnPressed(9)">9</td>
+        <td class="oprtButn"onclick="operatorBtnPressd('x')">x</td>
+    </tr>
+    <tr>
+       <td class="digitButon" onclick="digitBtnPressed(4)">4</td>
+       <td class="digitButon" onclick="digitBtnPressed(5)">5</td>
+       <td class="digitButon"onclick="digitBtnPressed(6)">6</td>
+       <td class="oprtButn"onclick="operatorBtnPressd('-')">-</td>   
+    </tr>
+    <tr>
+        <td class="digitButon" onclick="digitBtnPressed(1)">1</td>
+        <td class="digitButon"onclick="digitBtnPressed(2)">2</td>
+        <td class="digitButon"onclick="digitBtnPressed(3)">3</td>
+        <td class="oprtButn" onclick="operatorBtnPressd('+')">+</td>
+    </tr>
+    <tr>
+        <td class="digitButon" colspan="1" onclick="digitBtnPressed(0)">0</td>
+        <td><button onclick="addComma()">,</button></td>
+        <td  class=ACButn onclick="btnACPressed()">AC</td>
+        <td class="oprtButn" onclick="operatorBtnPressd('/')">/</td>
+    </tr>
+    <tr>
+        <td><button onclick="squareRoot()">√</button></td>
+        <td><button onclick="powerOf2()">x²</button></td>
+        <td><button onclick="powerOf3()">x³</button></td>
+        <td><button onclick="logbase10()">log</button></td>
+    </tr>
+    <tr>
+        <td class="oprtButn" colspan="4" onclick="equalsBtnPressd()"> = </td>
+    </tr>
+
+    </table></div>
+    <script>
+        var newLine=true; //Boolean variable,determines if the next thing a user types should beon a new line
+          //eventhandler for when any digit button is pressed
+          var value1;
+          var currentOperater;
+
+        function digitBtnPressed(button){
+            if (newLine){
+                document.getElementById("inputBox").value=button;
+                newLine=false;
+            }else{
+                 var currentValue=document.getElementById("inputBox").value ;
+            document.getElementById("inputBox").value= currentValue + button;
+            }
+        }
+        //eventhandler for when ac button is pressed
+        function btnACPressed(){document.getElementById("inputBox").value=0;
+            newLine=true;
+        }
+      //eventhandler for when operator is clicked
+        function operatorBtnPressd(operator){
+            currentOperater=operator;
+            value1=parseInt(document.getElementById("inputBox").value);
+            newLine=true;
+        }
+
+        //eventhandler for equals to
+        function equalsBtnPressd(){
+            var value2=parseInt(document.getElementById("inputBox").value);
+            var finalTotal;
+
+            switch (currentOperater){
+                case "+":
+                    finalTotal=value1 + value2;
+                    break;
+                case"-":arguments
+                finalTotal=value1- value2;
+                break;
+                case"x":arguments
+                finalTotal=value1 * value2;
+                break;
+                case"/":
+                finalTotal=value1 / value2;
+                break;
+            }
+            document.getElementById("inputBox").value=finalTotal;
+            value1=0;
+            newLine=true;
+        }
+        //eventhandler for squareroot
+        function squareRoot(){
+            var val=parseFloat(document.getElementById("inputBox").value);
+            if(val>=0){
+                document.getElementById("inputBox").value=Math.sqrt(val);
+            }else{alert("invalid")}
+        }
+
+        //for powerof2
+        function powerOf2(){
+            var val=eval(document.getElementById("inputBox").value);
+
+            document.getElementById("inputBox").value=Math.pow(val,2);
+        }
+//for powerof3
+        function powerOf3(){
+            var val=eval(document.getElementById("inputBox").value);
+
+            document.getElementById("inputBox").value=Math.pow(val,3);
+        }
+        //for logbase10
+        function logbase10(){
+            var val=eval(document.getElementById("inputBox").value);if (val>0){
+                document.getElementById("inputBox").value=Math.log10(val);}else{
+                    alert("invalid")
+                }
+            }
+            function addComma(){
+                document.getElementById("inputBox").value+=",";
+            }
+        
+    </script>
+</body>
+</html>

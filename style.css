@@ -1,0 +1,101 @@
+table{
+    
+   table-layout: fixed;
+    border-collapse: separate;
+    width:100%;
+    border-spacing: 8px;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+td{
+   
+    padding:5px;
+   
+}
+#inputBox{
+    background-color: #000;
+    text-align: right;
+    width:100%;
+    font-size: 24px;
+    color:#0ff;
+    border:none;
+    padding: 10px;
+    height:60px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px #0ff;
+    margin-bottom: 15px;
+
+}
+.digitButon{
+    background-color: #111;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0 0 10px #0ff;
+    color:#0ff
+
+}
+button{
+     background-color: #111;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0 0 10px #0ff;
+    color:#0ff
+}
+.oprtButn{
+     background-color: #111;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0 0 10px #0ff;
+    color:#0ff
+}
+.ACButn{
+     background-color: #111;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0 0 10px #0ff;
+    color:#0ff
+}
+.calculator{
+    background: #1a1a1a;
+    padding:20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #0ff;
+    width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
+}
+@media(max-width:400px){
+    .calculator{
+        padding:15px;
+        max-width: 280px;
+    }
+    .inputBox{
+        font-size: 45px;
+        height:45px;
+    }
+}
