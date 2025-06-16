@@ -89,6 +89,28 @@ button{
     max-width: 340px;
     box-sizing: border-box;
 }
+
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #0ff;
+  font-size: 14px;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+footer a {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+         }
 @media(max-width:400px){
     .calculator{
         padding:15px;
